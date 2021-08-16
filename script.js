@@ -20,4 +20,3 @@ document.getElementById('login-submit').addEventListener('click', function(){
 
 
 
-// deposite & withdraw

@@ -37,8 +37,50 @@ document.getElementById('deposite-button').addEventListener('click', function(){
 
     // clear the deposite input value
 
-    depositeInput.value = 0
+    depositeInput.value = ''
 
 })
 
 
+// // // Withdraw button event /// // // //
+
+document.getElementById('withdraw-button').addEventListener('click', function(){
+    
+
+    const widrawInpute = document.getElementById('withdraw-input')
+    const withdrawAmountText = widrawInpute.value
+    
+    const newWithdrawAmount = parseFloat(withdrawAmountText) 
+
+
+    // set withdraw total 
+
+    const withdrawTotal = document.getElementById('withdraw-total')
+    const previousWithDrawTotalText = withdrawTotal.innerText
+
+    const previousWithDrawTotal = parseFloat(previousWithDrawTotalText)
+
+    const newWithdrawTotal = previousWithDrawTotal + newWithdrawAmount
+
+    withdrawTotal.innerText = newWithdrawTotal
+
+
+    // clear withdrw input
+    
+    widrawInpute.value = ''
+
+
+
+    // update balance total
+
+    const balanceTotal = document.getElementById('balance-total')
+
+    const previousBalanceTotalText = balanceTotal.innerText
+
+    const previousBalanceTotal = parseFloat(previousBalanceTotalText)
+
+    const newBalanceTotal = previousBalanceTotal - newWithdrawTotal
+
+    balanceTotal.innerText = newBalanceTotal
+
+})
